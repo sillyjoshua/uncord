@@ -1,40 +1,72 @@
-<p align="center">
-  <img width="100" src="assets/icon.png" />
-</p>
-<h1 align="center">Meowcord</h1>
+<div align="center">
 
-meowcord is a self-hosted discord clone with feature parity, e2e encryption and federation.
+<img src="assets/uncord-logo.svg" alt="Uncord logo" width="112" />
 
-it serves a custom patched Discord web client with Equicord from a local copy and rebrands that client as your instance. anyone can sign up on your instance, log in with the real Discord UI and use it the way they use Discord, without a Discord account.
+# Uncord
 
-you can also join servers, group chats, and add friends from other instances, as long as they're running meowcord and have their instance verified.
+**Your community, your instance.**
 
-**meowcord is currently in very early alpha.** right now, it's a big mess and not recommended for production use or anything other than testing. during this alpha, we'll also have an extremely permissive ai contribution policy, so that we can get as many people as possible to test it and contribute to it. else, we'd never get anywhere near discord feature parity.
+A self-hosted Discord-style chat client forked from [Meowcord](https://github.com/meowcorded/meowcord), with a familiar chat experience and room to make it your own.
 
-## join meowcord!!
+[Features](#features) · [Self-hosting](#self-hosting) · [Contributing](#contributing) · [License](#license)
 
-since meowcord is federated, no matter what instance you pick, you'll always be able to talk to anybody else, even on other instances :3
+</div>
 
-**start by [picking an instance from this list](instances.md) and signing up.** you can find servers to join in the Discovery tab.
+---
 
-## self-hosting
+## What is Uncord?
 
-follow [the setup guide](docs/self-hosting/setup.md) for Docker, local development and the source archive. to run without Docker, [the native Linux guide](docs/self-hosting/native.md) sets the server up as a dedicated `meowcord` user with systemd, local PostgreSQL and an HTTPS reverse proxy, and covers voice, operator access, backups and updates. the server supports [PostgreSQL and SQLite](docs/self-hosting/databases.md).
+Uncord is a community-focused fork of Meowcord. It builds on Meowcord’s self-hosted, federated chat platform and its Discord-like web client, while giving the project its own identity and customisations.
 
-for Docker, copy `.env.example` to `.env`, set your instance domain, PostgreSQL password and public voice address, then run:
+The main chat experience is the focus. Supporting pages—including the admin panel and bot developer portal—are being refreshed to feel cleaner and more consistent.
 
-```sh
-docker compose up -d --build
-```
+> **Project status:** Uncord is based on an early-stage upstream project. Expect rough edges; don’t use it for anything mission-critical without reviewing and testing it first.
 
-after registering your operator account, grant it access locally using its numeric account ID: `docker compose exec server bun scripts/ops/operator.mjs grant <account-id>`. the first signup is an ordinary account. see the alpha guide for local provisioning and revocation.
+## Features
 
-to get your instance listed in [instances.md](instances.md) and in global discovery, read [the verification guide](docs/self-hosting/verification.md).
+- **Familiar chat UI** — a Discord-style interface for communities.
+- **Federation** — connect with users and communities on other compatible instances.
+- **Self-hosting** — run your own instance and control its configuration.
+- **Admin tools** — instance and community management interfaces.
+- **Bot developer portal** — a place for bot-related tools and configuration.
+- **Open source** — AGPL-3.0 licensing; see [LICENSE](LICENSE).
 
-## contributing
+Feature availability depends on the upstream version and your instance configuration.
 
-AI contributions are allowed during the alpha. please read [CONTRIBUTING.MD](CONTRIBUTING.MD) for development conventions and verification commands, and open an issue or pull request for bugs and improvements.
+## Self-hosting
+
+Read the project guides before setting up an instance:
+
+- [Setup with Docker](docs/self-hosting/setup.md)
+- [Native Linux setup](docs/self-hosting/native.md)
+- [Database options](docs/self-hosting/databases.md)
+- [Instance verification](docs/self-hosting/verification.md)
+
+For the Docker setup, the upstream guide uses an environment file. Start by copying `.env.example` to `.env`, then follow the setup guide to configure your instance.
+
+Clone the repository:
+
+    git clone https://github.com/sillyjoshua/uncord.git
+    cd uncord
+
+Continue with the instructions in the relevant guide rather than assuming development and production use the same command.
+
+## Contributing
+
+Contributions and bug reports are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) for development conventions and verification steps before opening a pull request.
+
+## Credits
+
+Uncord is a fork of [Meowcord](https://github.com/meowcorded/meowcord). Thanks to the original maintainers and contributors for building the foundation this project is based on.
 
 ## License
 
-AGPL-3.0-only, see [LICENSE](LICENSE). Code inherited from before this fork is by [Spacebar](https://github.com/spacebarchat/server) and its contributors.
+Uncord is distributed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**. See [LICENSE](LICENSE) for the full terms. Code inherited from upstream remains subject to its applicable notices and license terms.
+
+---
+
+<div align="center">
+
+**Uncord** · Same vibes. More freedom.
+
+</div>
